@@ -1,4 +1,4 @@
-# Revorix Engineering â€” GitHub Pages Deployment Guide
+# Revorix Engineering — GitHub Pages Deployment Guide
 
 This package is intentionally **plain HTML/CSS/JavaScript**. There is no npm build step, no framework runtime, and no database. GitHub Pages can serve the files directly.
 
@@ -66,7 +66,7 @@ You can also run `publish.cmd` **after** the files are inside the existing Git r
 On GitHub:
 
 1. Open `ti-sheiikh/tabish-irfan-portfolio`.
-2. Open **Settings â†’ Pages**.
+2. Open **Settings → Pages**.
 3. Under **Build and deployment**, select **Deploy from a branch**.
 4. Select branch **main** and folder **/(root)**.
 5. Save.

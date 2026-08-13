@@ -28,7 +28,7 @@ Read **DEPLOYMENT.md** before publishing.
 
 ## Brand
 
-Â© 2026 Revorix Engineering. All Rights Reserved.
+© 2026 Revorix Engineering. All Rights Reserved.
 
 ObsoletePCB Solutions is presented as the specialist PCB reverse-engineering service of Revorix Engineering.
 
