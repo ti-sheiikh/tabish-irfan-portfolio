@@ -12,6 +12,62 @@
     reveals.forEach(el=>io.observe(el));
   } else reveals.forEach(el=>el.classList.add('visible'));
 
+
+  const reducedMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-slider]').forEach(slider=>{
+    const slides=[...slider.querySelectorAll(':scope > .slider-stage > .media-slide')];
+    if(slides.length<2) return;
+    const dotsWrap=slider.querySelector(':scope > .slider-dots');
+    let index=Math.max(0,slides.findIndex(s=>s.classList.contains('is-active')));
+    let timer;
+    const dots=slides.map((_,i)=>{
+      const dot=document.createElement('span');
+      dot.className='slider-dot'+(i===index?' is-active':'');
+      dotsWrap?.appendChild(dot);
+      return dot;
+    });
+    const show=next=>{
+      if(next===index) return;
+      const current=slides[index];
+      const incoming=slides[next];
+      current.classList.add('is-exiting');
+      incoming.classList.add('is-active');
+      dots[index]?.classList.remove('is-active');
+      dots[next]?.classList.add('is-active');
+      window.setTimeout(()=>{
+        current.classList.remove('is-active','is-exiting');
+      },820);
+      index=next;
+    };
+    const interval=Math.max(3200,Number(slider.dataset.interval)||4600);
+    const start=()=>{
+      if(reducedMotion) return;
+      window.clearInterval(timer);
+      timer=window.setInterval(()=>show((index+1)%slides.length),interval);
+    };
+    const stop=()=>window.clearInterval(timer);
+    const pauseOnHover=slider.dataset.pauseHover!=='false';
+    if(pauseOnHover){
+      slider.addEventListener('mouseenter',stop);
+      slider.addEventListener('mouseleave',start);
+      slider.addEventListener('focusin',stop);
+      slider.addEventListener('focusout',start);
+    }
+    start();
+  });
+
+  const introVideo=document.querySelector('.home-video-section video');
+  if(introVideo){
+    if(reducedMotion){introVideo.pause();introVideo.removeAttribute('autoplay');}
+    else if('IntersectionObserver' in window){
+      const vio=new IntersectionObserver(entries=>entries.forEach(entry=>{
+        if(entry.isIntersecting) introVideo.play().catch(()=>{});
+        else introVideo.pause();
+      }),{threshold:.2});
+      vio.observe(introVideo);
+    }
+  }
+
   const lightbox=document.querySelector('.lightbox');
   if(lightbox){
     const img=lightbox.querySelector('img');
