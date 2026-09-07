@@ -214,4 +214,9 @@ body{background:#fff;color:var(--ink)}
 .hero-pcb-slider-small{width:50%;height:235px;left:-1%;bottom:3px}
 .hero-pcb-slider-small .media-slide img{object-fit:contain}
 @media (max-width:560px){.hero-pcb-slider-small{width:48%;height:160px;left:1%}.hero-pcb-showcase .media-slider .media-slide img{padding:14px}}
-`r`n.video-sound-toggle{position:absolute;right:18px;bottom:17px;z-index:3;display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid rgba(255,255,255,.24);border-radius:10px;background:rgba(7,24,39,.82);color:#fff;font:inherit;font-size:.77rem;font-weight:750;cursor:pointer;backdrop-filter:blur(9px);transition:background .2s ease,transform .2s ease}`r`n.video-sound-toggle:hover{background:rgba(7,24,39,.95);transform:translateY(-1px)}`r`n.video-sound-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}`r`n.video-sound-toggle .sound-indicator{width:8px;height:8px;border-radius:50%;background:#f0b84b;box-shadow:0 0 0 5px rgba(240,184,75,.12)}`r`n.video-sound-toggle[aria-pressed="true] .sound-indicator{background:#39d98a;box-shadow:0 0 0 5px rgba(57,217,138,.12)}`r`n@media (max-width:560px){.video-sound-toggle{right:12px;bottom:12px}}
+.video-sound-toggle{position:absolute;right:18px;bottom:17px;z-index:3;display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid rgba(255,255,255,.24);border-radius:10px;background:rgba(7,24,39,.82);color:#fff;font:inherit;font-size:.77rem;font-weight:750;cursor:pointer;backdrop-filter:blur(9px);transition:background .2s ease,transform .2s ease}
+.video-sound-toggle:hover{background:rgba(7,24,39,.95);transform:translateY(-1px)}
+.video-sound-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.video-sound-toggle .sound-indicator{width:8px;height:8px;border-radius:50%;background:#f0b84b;box-shadow:0 0 0 5px rgba(240,184,75,.12)}
+.video-sound-toggle[aria-pressed=true] .sound-indicator{background:#39d98a;box-shadow:0 0 0 5px rgba(57,217,138,.12)}
+@media (max-width:560px){.video-sound-toggle{right:12px;bottom:12px}}
