@@ -68,6 +68,25 @@
     }
   }
 
+  const soundToggle=document.querySelector('.video-sound-toggle');
+  if(introVideo&&soundToggle){
+    const syncSoundButton=()=>{
+      const soundOn=!introVideo.muted;
+      soundToggle.setAttribute('aria-pressed',soundOn?'true':'false');
+      soundToggle.setAttribute('aria-label',soundOn?'Mute video':'Turn video sound on');
+      const label=soundToggle.querySelector('.sound-label');
+      if(label) label.textContent=soundOn?'Mute':'Sound on';
+    };
+    soundToggle.addEventListener('click',()=>{
+      introVideo.muted=!introVideo.muted;
+      if(!introVideo.muted) introVideo.volume=1;
+      introVideo.play().catch(()=>{});
+      syncSoundButton();
+    });
+    introVideo.addEventListener('volumechange',syncSoundButton);
+    syncSoundButton();
+  }
+
   const lightbox=document.querySelector('.lightbox');
   if(lightbox){
     const img=lightbox.querySelector('img');
