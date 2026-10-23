@@ -225,7 +225,7 @@ body{background:#fff;color:var(--ink)}
 .selected-clients-heading .eyebrow{margin-bottom:10px}
 .selected-clients-heading h2{margin:0;color:var(--navy);font-size:clamp(2rem,3vw,2.8rem);line-height:1.1;letter-spacing:-.035em}
 .selected-clients-heading p{max-width:650px;margin:16px auto 0;color:var(--muted);font-size:.98rem}
-.client-logo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:900px;margin:0 auto}
+.client-logo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .client-logo-card{display:flex;flex-direction:column;min-height:275px;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(11,32,53,.045);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
 .client-logo-card:hover{transform:translateY(-5px);border-color:#b8cee3;box-shadow:0 20px 42px rgba(11,32,53,.1)}
 .client-logo-wrap{height:165px;padding:28px;display:flex;align-items:center;justify-content:center;background:#fff;border-bottom:1px solid #edf2f6}
